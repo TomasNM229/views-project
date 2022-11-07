@@ -51,5 +51,39 @@ namespace views_project.Controllers
             }
             return View();
         }
+
+        public async Task<IActionResult> Edit(int ? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var publico = await _context.Publico.FindAsync(id);
+
+            if(publico == null)
+            {
+                return NotFound();
+            }
+            return View(publico);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind ("IDPublico, Nombre, Apellido, Edad, Correo, Telefono")] Publico publico)
+        {
+            if(id != publico.IDPublico)
+            {
+                return NotFound();
+            }
+            if(ModelState.IsValid)
+            {
+                _context.Update(publico);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(publico);
+        }
     }
 }
