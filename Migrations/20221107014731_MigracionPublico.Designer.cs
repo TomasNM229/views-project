@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using views_project.Models;
 
@@ -10,9 +11,10 @@ using views_project.Models;
 namespace views_project.Migrations
 {
     [DbContext(typeof(views_projectContext))]
-    partial class views_projectContextModelSnapshot : ModelSnapshot
+    [Migration("20221107014731_MigracionPublico")]
+    partial class MigracionPublico
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

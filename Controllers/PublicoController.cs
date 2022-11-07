@@ -18,5 +18,21 @@ namespace views_project.Controllers
         {
             return View(await _context.Publico.ToListAsync());
         }
+
+        public async Task<IActionResult> Details(int ? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            
+            var publico = await _context.Publico.FirstOrDefaultAsync(p => p.IDPublico == id);
+
+            if(publico == null)
+            {
+                return NotFound();
+            }
+            return View(publico);
+        }
     }
 }
