@@ -1,0 +1,21 @@
+@model views_project.Models.Estilos
+
+<h1>Confirme si está seguro de eliminar el registro</h1>
+
+<div>
+    <dl>@*Agregar descripciones de un elemento y subDescripciones*@
+        <dt>@*Titulo*@
+            @Html.DisplayNameFor(model => model.Descripcion) @*Mostrar el nombre del campo del modelo especificado*@
+        </dt>
+        <dd>@*Data*@
+            @Html.DisplayFor(model => model.Descripcion) @*Mostrar el dato del campo del modelo especificado*@
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IDEspecialidad">
+        <input type="submit" value="Eliminar">
+    </form>
+    <div>
+        <a asp-action="Index">Volver</a>
+    </div>
+</div>
