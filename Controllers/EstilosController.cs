@@ -77,5 +77,21 @@ namespace Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("IDEspecialidad, Descripcion")]Estilos estilos)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(estilos);
+                await _context.SaveChangesAsync(); //ASYNC
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
     }
 }
