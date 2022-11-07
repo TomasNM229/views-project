@@ -34,5 +34,22 @@ namespace views_project.Controllers
             }
             return View(publico);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken] // Validar nuestro metodo que ha sido ejecutado mediante el formulario y no desde la URL, previene de ataques
+        public async Task<IActionResult> Create([Bind("IDPublico, Nombre, Apellido, Edad, Correo, Telefono")]Publico publico)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(publico);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
     }
 }
