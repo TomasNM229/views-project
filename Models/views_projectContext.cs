@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
+
 namespace views_project.Models
 {
     public class views_projectContext : DbContext
@@ -15,6 +16,7 @@ namespace views_project.Models
 
         public DbSet<Estilos> Estilos{get; set;}
         public DbSet<Publico> Publico{get; set;}
+        public DbSet<Empresa> Empresa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) //metodo que está protegido y que no puede ser ingresado
         {
@@ -39,5 +41,7 @@ namespace views_project.Models
             }
             );
         }// Especificar las caracteristicas de nuestros datos para que no sean muy genéricos
+
+    
     }
 }

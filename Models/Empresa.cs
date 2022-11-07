@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System;
-namespace Empresa.Models
+namespace views_project.Models
 {
     public class Empresa
     {   
