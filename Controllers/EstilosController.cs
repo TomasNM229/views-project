@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using views_project.Models;
 
 namespace Controllers
@@ -15,17 +16,17 @@ namespace Controllers
             _context = context;
         }
         
-        public IActionResult Index()
+        public async Task<IActionResult> Index() // la característica de "async" es para que pueda ser usado en simultaneo por varias personas
         {
-            return View(_context.Estilos.ToList());
+            return View(await _context.Estilos.ToListAsync()); //ASYNC
         }
-        public IActionResult Edit(int ? id) //puede que lo recibamos en NULL por eso el "?"
+        public async Task<IActionResult> Edit(int ? id) //puede que lo recibamos en NULL por eso el "?"
         {
             if(id == null)
             {
                 return NotFound();
             }
-            var estilos = _context.Estilos.Find(id);
+            var estilos = await _context.Estilos.FindAsync(id); //ASYNC
 
             if(estilos == null)
             {
@@ -35,7 +36,7 @@ namespace Controllers
             return View(estilos);
         }
         [HttpPost] // método encargado del Post
-        public IActionResult Edit(int id, [Bind("IDEspecialidad,Descripcion")] Estilos estilos)
+        public async Task<IActionResult> Edit(int id, [Bind("IDEspecialidad,Descripcion")] Estilos estilos)
         {
             if(id != estilos.IDEspecialidad)
             {
@@ -44,22 +45,22 @@ namespace Controllers
             if(ModelState.IsValid)// si el modelo llegó sin errores?
             {
                 _context.Update(estilos);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync(); //ASYNC
 
                 return RedirectToAction(nameof(Index)); //Nos dirige a la vista de Index
             }
             return View(estilos);
         }
         
-        public IActionResult Delete(int ? id)
+        public async Task<IActionResult> Delete(int ? id)
         {
             if(id == null)
             {
                 return NotFound();
             }
 
-            var estilos = _context.Estilos.FirstOrDefault(e => e.IDEspecialidad == id); //FirstOrDefault buscar la primera coincidencia y si no encuentra nada sería NULL
-
+            var estilos = await _context.Estilos.FirstOrDefaultAsync(e => e.IDEspecialidad == id); //FirstOrDefault buscar la primera coincidencia y si no encuentra nada sería NULL //ASYNC
+            
             if(estilos == null)
             {
                 return NotFound();
@@ -68,11 +69,11 @@ namespace Controllers
             return View(estilos);
         }
         [HttpPost]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var estilos = _context.Estilos.Find(id);
+            var estilos = await _context.Estilos.FindAsync(id); //ASYNC
             _context.Estilos.Remove(estilos);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync(); //ASYNC
 
             return RedirectToAction(nameof(Index));
         }
