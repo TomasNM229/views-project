@@ -14,6 +14,7 @@ namespace views_project.Models
         }
 
         public DbSet<Estilos> Estilos{get; set;}
+        public DbSet<Publico> Publico{get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) //metodo que está protegido y que no puede ser ingresado
         {
