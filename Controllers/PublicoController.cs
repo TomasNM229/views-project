@@ -85,5 +85,42 @@ namespace views_project.Controllers
 
             return View(publico);
         }
+
+        public async Task<IActionResult> Delete (int ? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var publico = await _context.Publico.FirstOrDefaultAsync(e => e.IDPublico == id);
+
+            if(publico == null)
+            {
+                return NotFound();
+            }
+            
+            return View(publico);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed (int ? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var publico = await _context.Publico.FindAsync(id);
+            if(publico == null)
+            {
+                return NotFound();
+            }
+
+            _context.Publico.Remove(publico);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
