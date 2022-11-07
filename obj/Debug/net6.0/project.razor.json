@@ -16298,6 +16298,16 @@
   "RootNamespace": "views_project",
   "Documents": [
     {
+      "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Index.cshtml",
+      "TargetPath": "Views\\Publico\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Create.cshtml",
+      "TargetPath": "Views\\Publico\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Udemy\\views-project\\Views\\Estilos\\Edit.cshtml",
       "TargetPath": "Views\\Estilos\\Edit.cshtml",
       "FileKind": "mvc"

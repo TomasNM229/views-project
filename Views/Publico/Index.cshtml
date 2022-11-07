@@ -1,0 +1,55 @@
+@model IEnumerable<views_project.Models.Publico>
+
+<p>
+    <a asp-action="Create">Ingresar un nuevo registro</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modeloItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeloItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeloItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeloItem => item.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeloItem => item.Telefono)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDPublico">Editar</a>
+                    <a asp-action="Detail" asp-route-id="@item.IDPublico">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.IDPublico">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
