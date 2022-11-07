@@ -16363,6 +16363,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Delete.cshtml",
+      "TargetPath": "Views\\Publico\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Udemy\\views-project\\Views\\Estilos\\Index.cshtml",
       "TargetPath": "Views\\Estilos\\Index.cshtml",
       "FileKind": "mvc"

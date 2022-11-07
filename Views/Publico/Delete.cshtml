@@ -1,0 +1,43 @@
+@model views_project.Models.Publico
+
+<h1>Confirmación de eliminación del registro</h1>
+
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Apellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Apellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Edad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Edad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Telefono)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IDPublico">
+        <input type="submit" value=Eliminar>
+        <a asp-action="Index">Volver</a>
+    </form>
+</div>
