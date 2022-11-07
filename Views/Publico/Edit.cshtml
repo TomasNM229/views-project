@@ -1,0 +1,45 @@
+@model views_project.Models.Publico
+
+<h1>Publico</h1>
+<div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="IDPublico">
+        <div>
+            <label asp-for="Nombre"></label>
+            <input asp-for="Nombre">
+            <span asp-validation-for="Nombre"></span>
+        </div>
+        </br>
+        <div>
+            <label asp-for="Apellido"></label>
+            <input asp-for="Apellido">
+            <span asp-validation-for="Apellido"></span>
+        </div>
+        </br>
+        <div>
+            <label asp-for="Edad"></label>
+            <input asp-for="Edad">
+            <span asp-validation-for="Edad"></span>
+        </div>
+        </br>
+        <div>
+            <label asp-for="Correo"></label>
+            <input asp-for="Correo">
+            <span asp-validation-for="Correo"></span>
+        </div>
+        </br>
+        <div>
+            <label asp-for="Telefono"></label>
+            <input asp-for="Telefono">
+            <span asp-validation-for="Telefono"></span>
+        </div>
+        </br>
+        <div>
+            <input type="submit" value="Grabar">
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-for="Index">Volver</a>
+</div>

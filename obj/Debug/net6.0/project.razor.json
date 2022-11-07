@@ -16298,6 +16298,11 @@
   "RootNamespace": "views_project",
   "Documents": [
     {
+      "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Edit.cshtml",
+      "TargetPath": "Views\\Publico\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Index.cshtml",
       "TargetPath": "Views\\Publico\\Index.cshtml",
       "FileKind": "mvc"
@@ -16345,6 +16350,11 @@
     {
       "FilePath": "e:\\Udemy\\views-project\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Udemy\\views-project\\Views\\Publico\\Details.cshtml",
+      "TargetPath": "Views\\Publico\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

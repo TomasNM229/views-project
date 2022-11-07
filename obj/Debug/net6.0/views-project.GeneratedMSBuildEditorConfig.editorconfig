@@ -43,6 +43,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Udemy/views-project/Views/Publico/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Udemy/views-project/Views/Publico/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Udemy/views-project/Views/Publico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

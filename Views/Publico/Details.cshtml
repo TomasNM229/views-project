@@ -1,0 +1,41 @@
+@model views_project.Models.Publico
+
+<h1>Publico</h1>
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Apellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Apellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Edad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Edad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.Telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.Telefono)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IDPublico">Editar</a>
+    <a asp-action="Index">Volver</a>
+</div>
